@@ -1,0 +1,205 @@
+body {
+    background: #42bae6;
+    color: #fff;
+    font-family: Helvetica, Arial;
+}
+
+.container {
+    margin: 100px auto;
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 85%;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+section {
+    margin-bottom: 250px;
+}
+
+/* BASIC - Input */
+.basic input {
+    border-radius: 50px;
+    border: 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 200;
+    margin-bottom: 25px;
+    padding: 25px 25px 25px 100px;
+    width: 50%;
+}
+
+.basic input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #fff;
+}
+
+.basic input.group {
+    background: #55c1e8 url('images/Group.png') no-repeat 40px 35px;
+}
+
+.basic input.email {
+    background: #55c1e8 url('images/Email.png') no-repeat 40px 25px;
+}
+
+.basic input.password {
+    background: #55c1e8 url('images/Password.png') no-repeat 40px 15px;
+}
+
+/* OTHER - Checkbox Toggle */
+.other {
+    margin-top: 100px;
+}
+
+.toggle-container {
+    margin: 0 auto 50px;
+    overflow: hidden;
+    width: 40%;
+}
+
+.toggle-container h3 {
+    float: left;
+    font-size: 25px;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.toggle-container .tgl-btn {
+    float: right;
+}
+
+.tgl,
+.tgl + .tgl-btn:before {
+    display: none;
+}
+
+.tgl-btn {
+    background: #39a5cc;
+    border: 0;
+    border-radius: 25px;
+    cursor: pointer;
+    display: block;
+    height: 50px;
+    width: 100px;
+    -webkit-user-select: none; 
+    user-select: none;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.tgl-btn:after,
+.tgl-btn:before {
+    display: block;
+    content: "";
+    position: relative;
+    height: 100%;
+    width: 50%;
+}
+
+.tgl-btn:after {
+    background: #2577bd;
+    border-radius: 25px;
+    content: "";
+    left: 0;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.tgl:checked + .tgl-btn:after {
+    background: #fff;
+    left: 50%;
+}
+
+/* DROPDOWN - Dropdown Menu */
+.menu {
+    margin: 0 auto;
+    text-align: left;
+    width: 500px;
+}
+
+.menu > li {
+    list-style-type: none;
+    position: relative;
+}
+
+.menu label {
+    background: #55c1e8;
+    border-radius: 40px;
+    display: block;
+    font-size: 24px;
+    font-weight: 200;
+    padding: 25px;
+    cursor: pointer;
+}
+
+.menu label:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 25px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid rgba(255,255,255,.5);
+    border-bottom: 0 solid rgba(255,255,255,.5);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    transition: border-bottom .1s, border-top .1s .1s;
+}
+
+.menu input:checked ~ label {
+    border: 1px solid rgba(255,255,255,.5);
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.menu input:checked ~ label:after {
+    border-top: 0 solid rgba(255,255,255,.5);
+    border-bottom: 10px solid rgba(255,255,255,.5);
+    transition: border-top .1s, border-bottom .1s .1s;
+}
+
+.menu input {
+    display: none
+}
+
+.menu input:checked ~ ul.submenu {
+    background: #55c1e8;
+    border: 1px solid rgba(255,255,255,.5);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top: 0;
+    display: block;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0 25px;
+    transition: max-height 0.5s ease-out;
+    position: absolute;
+    transition: max-height 0.5s ease-in;
+    width: 448px;
+}
+
+.menu ul.submenu {
+    display: none;
+    position: relative;
+}
+
+.menu ul.submenu li {
+    font-size: 24px;
+    font-weight: 200;
+    padding-bottom: 25px;
+}
+
+@media (max-width: 767px) {
+    .toggle-container,
+    .menu {
+        width: 90%;
+    }
+}
